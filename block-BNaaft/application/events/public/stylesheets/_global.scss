@@ -1,0 +1,116 @@
+/*Global*/
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.padding {
+  padding: 5rem 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Images */
+.font-0 {
+  font-size: 0;
+}
+
+.full-width {
+  width: 100%;
+  object-fit: cover;
+}
+
+.img-container {
+  border-radius: 0.5rem;
+  border: 2px solid rgb(93, 66, 111);
+  overflow: hidden;
+}
+
+/* Headings */
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.66rem;
+}
+
+/* Buttons */
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.2rem;
+  outline: none;
+  border: none;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: rgb(93, 66, 111);
+}
+
+.btn-primary:hover {
+  color: rgb(93, 66, 111);
+  background-color: #fff;
+  padding: 0.45rem 1.3rem;
+  border: 2px solid rgb(93, 66, 111);
+}
+
+.btn-secondary {
+  color: rgb(93, 66, 111);
+  background-color: #fff;
+  border: 2px solid rgb(93, 66, 111);
+}
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: rgb(93, 66, 111);
+  border: none;
+}
+
+.btn-tertiory {
+  color: #fff;
+  padding: 0.1rem 0.5rem;
+  background-color: rgb(93, 66, 111);
+}

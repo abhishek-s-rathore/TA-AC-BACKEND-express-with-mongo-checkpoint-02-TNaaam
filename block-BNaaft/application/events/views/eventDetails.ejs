@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Title-->
+    <title>Details | Events</title>
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Font Awesome-->
+    <script
+      src="https://kit.fontawesome.com/5cc6fb9f6b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+      <div class="container flex justify-between align-center">
+        <a id="logo" href="/">Events</a>
+        <a href="/events"
+          ><button class="btn btn-primary">View Events</button></a
+        >
+      </div>
+    </header>
+    <div class="container details flex justify-between align-start">
+      <!-- Aside -->
+      <aside class="flex-25 flex justify-between align-center flex-column">
+        <div style="width: 100%">
+          <cite>Host: <%= event.host %></cite>
+          <address>Location: <%= event.location %></address>
+          <time>Start Date: <%= startDate %></time>
+          <time>End Date: <%= endDate %></time>
+          <div class="cat">
+            <span>Categories: </span>
+            <% event.categories.forEach(category=>{ %>
+            <span style="margin-bottom: 0.4rem" class="btn btn-tertiory">
+              <%= category %>
+            </span>
+            <% }); %>
+          </div>
+
+          <div class="reactions">
+            <p style="display: inline-block">
+              <a href="/events/<%= event._id %>/likes"
+                ><i class="fas fa-thumbs-up"></i
+              ></a>
+              : <%= event.likes %>
+            </p>
+          </div>
+          <div class="reactions">
+            <p style="display: inline-block">
+              <a href="/events/<%= event._id %>/dislikes"
+                ><i class="fas fa-thumbs-down"></i
+              ></a>
+              : <%= event.dislikes %>
+            </p>
+          </div>
+        </div>
+
+        <div class="buttons">
+          <a href="/events/<%= event._id %>/edit"
+            ><button class="btn btn-secondary">Edit</button></a
+          >
+          <a href="/events/<%= event._id %>/delete"
+            ><button class="btn btn-secondary">Delete</button></a
+          >
+        </div>
+      </aside>
+      <!--Main-->
+      <main class="flex-74">
+        <h1><%= event.title %></h1>
+        <p
+          style="
+            border-bottom: 2px solid rgb(93, 66, 111);
+            padding-bottom: 1rem;
+            margin-bottom: 1rem;
+          "
+        >
+          <%= event.summery %>
+        </p>
+
+        <div class="remark-container">
+          <% event.remarks.forEach(remark =>{ %>
+          <div class="remark flex justify-between align-center">
+            <div>
+              <p><%= remark.content %></p>
+              <cite
+                style="
+                  font-style: italic;
+                  color: rgb(117, 117, 117);
+                  font-size: 0.9rem;
+                "
+                >-<%= remark.author %></cite
+              >
+            </div>
+            <div class="flex justify-center align-center flex-column">
+              <p>
+                <span>
+                  <%= remark.likes %><a href="/remarks/<%= remark._id %>/likes">
+                    <i class="fas fa-thumbs-up"></i
+                  ></a>
+                </span>
+                |
+                <span>
+                  <%= remark.dislikes %><a
+                    href="/remarks/<%= remark._id %>/dislikes"
+                  >
+                    <i class="fas fa-thumbs-down"></i
+                  ></a>
+                </span>
+              </p>
+              <p>
+                <a href="/remarks/<%= remark._id %>/edit"
+                  ><i class="fas fa-edit"></i
+                ></a>
+                |
+                <a href="/remarks/<%= remark._id %>/delete"
+                  ><i class="fas fa-trash"></i
+                ></a>
+              </p>
+            </div>
+          </div>
+
+          <% }); %>
+        </div>
+        <hr style="border: 1px solid rgb(93, 66, 111)" />
+        <form
+          class="flex justify-between align-center"
+          action="/events/<%= event._id %>/remarks"
+          method="POST"
+        >
+          <textarea
+            class="flex-74"
+            style="height: 4.5rem; outline-color: rgb(93, 66, 111)"
+            type="text"
+            name="content"
+            placeholder="Add your Remark Here.."
+          ></textarea>
+          <div class="flex-25 flex justify-center align-center flex-column">
+            <input
+              style="
+                width: 100%;
+                margin-bottom: 0.5rem;
+                height: 1.8rem;
+                outline-color: rgb(93, 66, 111);
+              "
+              type="text"
+              name="author"
+              placeholder="Your Name"
+            />
+            <input
+              class="btn btn-primary"
+              style="width: 100%"
+              type="submit"
+              value="Send Remark"
+            />
+          </div>
+        </form>
+      </main>
+    </div>
+  </body>
+</html>

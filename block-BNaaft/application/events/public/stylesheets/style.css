@@ -1,0 +1,436 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+.flex {
+  display: flex; }
+
+.justify-between {
+  justify-content: space-between; }
+
+.justify-start {
+  justify-content: flex-start; }
+
+.justify-end {
+  justify-content: flex-end; }
+
+.justify-around {
+  justify-content: space-around; }
+
+.justify-evenly {
+  justify-content: space-evenly; }
+
+.justify-center {
+  justify-content: center; }
+
+.align-center {
+  align-items: center; }
+
+.align-start {
+  align-items: flex-start; }
+
+.align-end {
+  align-items: flex-end; }
+
+.align-between {
+  align-items: space-between; }
+
+.align-around {
+  align-items: space-around; }
+
+.align-evenly {
+  align-items: space-evenly; }
+
+.flex-wrap {
+  flex-wrap: wrap; }
+
+.flex-column {
+  flex-direction: column; }
+
+.flex-20 {
+  flex: 0 1 20%; }
+
+.flex-25 {
+  flex: 0 1 25%; }
+
+.flex-30 {
+  flex: 0 1 30%; }
+
+.flex-32 {
+  flex: 0 1 32%; }
+
+.flex-40 {
+  flex: 0 1 40%; }
+
+.flex-48 {
+  flex: 0 1 48%; }
+
+.flex-50 {
+  flex: 0 1 50%; }
+
+.flex-60 {
+  flex: 0 1 60%; }
+
+.flex-68 {
+  flex: 0 1 68%; }
+
+.flex-74 {
+  flex: 0 1 74%; }
+
+.flex-100 {
+  flex: 0 1 100%; }
+
+/*Global*/
+html {
+  font-size: 16px; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.5; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+.container {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem; }
+
+.padding {
+  padding: 5rem 0; }
+
+a {
+  text-decoration: none; }
+
+/* Images */
+.font-0 {
+  font-size: 0; }
+
+.full-width {
+  width: 100%;
+  object-fit: cover; }
+
+.img-container {
+  border-radius: 0.5rem;
+  border: 2px solid #5d426f;
+  overflow: hidden; }
+
+/* Headings */
+h1 {
+  font-size: 3rem; }
+
+h2 {
+  font-size: 2.5rem; }
+
+h3 {
+  font-size: 2rem; }
+
+h4 {
+  font-size: 1.5rem; }
+
+h5 {
+  font-size: 1rem; }
+
+h6 {
+  font-size: 0.66rem; }
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.4rem;
+  border-radius: 0.2rem;
+  outline: none;
+  border: none; }
+
+.btn:hover {
+  cursor: pointer; }
+
+.btn-primary {
+  color: #fff;
+  background-color: #5d426f; }
+
+.btn-primary:hover {
+  color: #5d426f;
+  background-color: #fff;
+  padding: 0.45rem 1.3rem;
+  border: 2px solid #5d426f; }
+
+.btn-secondary {
+  color: #5d426f;
+  background-color: #fff;
+  border: 2px solid #5d426f; }
+
+.btn-secondary:hover {
+  color: #fff;
+  background-color: #5d426f;
+  border: none; }
+
+.btn-tertiory {
+  color: #fff;
+  padding: 0.1rem 0.5rem;
+  background-color: #5d426f; }
+
+header {
+  box-shadow: 0 3px 8px #5d426f; }
+  header #logo {
+    font-family: 'Style Script', cursive;
+    font-size: 3.5rem;
+    color: #5d426f; }
+
+.home .hero {
+  height: 85vh; }
+  .home .hero .icon {
+    height: 100%; }
+  .home .hero .button {
+    height: 100%; }
+  .home .hero #logo {
+    margin-top: -7rem;
+    font-family: 'Style Script', cursive;
+    font-size: 3.5rem;
+    color: #5d426f; }
+
+.events aside {
+  height: 91.2vh;
+  border-right: 2px solid #5d426f;
+  border-left: 2px solid #5d426f; }
+  .events aside .box {
+    border-bottom: 2px solid #5d426f;
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 100%;
+    margin-bottom: 1rem; }
+  .events aside .box-1 {
+    height: 28vh; }
+  .events aside .box-2 {
+    height: 25vh;
+    text-align: center; }
+    .events aside .box-2 p {
+      text-align: center;
+      margin: 1rem auto; }
+  .events aside h3 {
+    text-align: center;
+    color: #5d426f;
+    margin-top: -0.5rem; }
+
+.events main {
+  height: 90vh;
+  overflow: auto; }
+  .events main article {
+    padding: 0.5rem;
+    width: 100%;
+    border-bottom: 2px solid #5d426f;
+    border-radius: 1rem; }
+  .events main h2 {
+    color: #5d426f; }
+  .events main p {
+    color: #646464;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem; }
+
+.events main::-webkit-scrollbar {
+  display: none; }
+
+.details aside {
+  padding: 1rem;
+  height: 91.4vh;
+  border-right: 2px solid #5d426f; }
+  .details aside cite,
+  .details aside address,
+  .details aside time,
+  .details aside .reactions,
+  .details aside .cat {
+    width: 100%;
+    display: block;
+    border-bottom: 2px solid #5d426f;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border-radius: 0.8rem; }
+  .details aside .buttons {
+    padding: 2rem; }
+    .details aside .buttons .btn:hover {
+      padding: 0.75rem 1.5rem; }
+
+.details main {
+  height: 91.4vh; }
+  .details main a {
+    color: #5d426f; }
+  .details main h1 {
+    color: #5d426f; }
+  .details main .remark {
+    background-color: rgba(93, 66, 111, 0.3);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem; }
+  .details main form {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #d1d1d3; }
+
+.editEvent h2 {
+  text-align: center;
+  color: #5d426f;
+  margin-top: 1rem; }
+
+.editEvent form {
+  max-width: 800px;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 2rem;
+  border: 2px solid #7e6390;
+  border-radius: 0.2rem; }
+  .editEvent form input {
+    width: 100%;
+    height: 2rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 1px solid #7e6390;
+    outline: none; }
+  .editEvent form input::placeholder {
+    color: black; }
+  .editEvent form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    border: none;
+    border-bottom: 1px solid #7e6390;
+    outline: none; }
+  .editEvent form textarea::placeholder {
+    color: black; }
+  .editEvent form .submit {
+    margin-bottom: 0;
+    color: #5d426f;
+    background-color: #fff;
+    border: 2px solid #5d426f; }
+  .editEvent form .submit:hover {
+    color: #fff;
+    background-color: #5d426f;
+    border: none; }
+
+/*# sourceMappingURL=style.css.map */
