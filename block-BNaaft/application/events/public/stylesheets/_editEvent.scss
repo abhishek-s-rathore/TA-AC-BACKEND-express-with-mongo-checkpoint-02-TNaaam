@@ -1,0 +1,47 @@
+.editEvent {
+  h2 {
+    text-align: center;
+    color: rgb(93, 66, 111);
+    margin-top: 1rem;
+  }
+  form {
+    max-width: 800px;
+    width: 100%;
+    margin: 1rem auto;
+    padding: 2rem;
+    border: 2px solid rgb(126, 99, 144);
+    border-radius: 0.2rem;
+    input {
+      width: 100%;
+      height: 2rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-bottom: 1px solid rgb(126, 99, 144);
+      outline: none;
+    }
+    input::placeholder {
+      color: black;
+    }
+    textarea {
+      width: 100%;
+      margin-bottom: 1rem;
+      border: none;
+      border-bottom: 1px solid rgb(126, 99, 144);
+      outline: none;
+    }
+    textarea::placeholder {
+      color: black;
+    }
+    .submit {
+      margin-bottom: 0;
+      color: rgb(93, 66, 111);
+      background-color: #fff;
+      border: 2px solid rgb(93, 66, 111);
+    }
+    .submit:hover {
+      color: #fff;
+      background-color: rgb(93, 66, 111);
+      border: none;
+    }
+  }
+}
