@@ -130,7 +130,6 @@ router.get('/new', (req, res, next) => {
 router.post('/', upload.single('cover'), (req, res, next) => {
   var data = req.body;
   data.cover = req.file.filename;
-  console.log(data);
   data.categories = data.categories.trim().split(',');
   Event.create(data, (err, event) => {
     if (err) return next(err);
@@ -158,8 +157,9 @@ router.get('/:eventId/edit', (req, res, next) => {
   });
 });
 
-router.post('/:eventId', (req, res, next) => {
+router.post('/:eventId', upload.single('cover'), (req, res, next) => {
   var eventId = req.params.eventId;
+  data.cover = req.file.filename;
   var data = req.body;
   Event.findByIdAndUpdate(eventId, data, (err, updatedEvent) => {
     if (err) return next(err);

@@ -39,7 +39,11 @@
     <!--Main-->
     <main class="editEvent">
       <h2>Update Event</h2>
-      <form action="/events/<%= event._id %>" method="POST">
+      <form
+        enctype="multipart/form-data"
+        action="/events/<%= event._id %>"
+        method="POST"
+      >
         <input
           type="text"
           name="title"
