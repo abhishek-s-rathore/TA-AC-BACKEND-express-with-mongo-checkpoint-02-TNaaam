@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Title-->
+    <title>List | Events</title>
+    <!--Stylesheet-->
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Font Awesome-->
+    <script
+      src="https://kit.fontawesome.com/5cc6fb9f6b.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--Header-->
+    <header>
+      <div class="container flex justify-between align-center">
+        <a id="logo" href="/">Events</a>
+        <a href="/events"
+          ><button class="btn btn-primary">View Events</button></a
+        >
+      </div>
+    </header>
+    <!-- Aside -->
+    <div class="container events flex justify-between align-start">
+      <aside class="flex-25 flex justify-start align-center flex-column">
+        <div class="box box-1 category">
+          <h3>Categories</h3>
+          <%categoriesArr.forEach((elem)=>{%>
+          <a style="margin: 0.5rem" href="/events/filter/?category=<%= elem %>"
+            ><button style="font-size: 0.9rem" class="btn btn-tertiory">
+              <%= elem %>
+            </button></a
+          >
+          <% }); %>
+        </div>
+        <div class="box box-1 location">
+          <h3>Locations</h3>
+          <%locationArr.forEach((elem)=>{%>
+          <a style="margin: 0.5rem" href="/events/filter/?location=<%= elem %>"
+            ><button style="font-size: 0.9rem" class="btn btn-tertiory">
+              <%= elem %>
+            </button></a
+          >
+          <% }); %>
+        </div>
+        <form
+          action="/events/sortbydate"
+          method="POST"
+          class="box box-2 sortByDate"
+        >
+          <h3>Sort By Date</h3>
+          <p>Initial Date: <input type="date" name="firstdate" /></p>
+
+          <p>Final: Date: <input type="date" name="lastdate" /></p>
+
+          <input
+            type="submit"
+            style="padding: 0.55rem 1rem; text-align: center"
+            class="btn btn-primary"
+            value="Find Events"
+          />
+        </form>
+
+        <a style="margin-bottom: 1rem" href="/events/new"
+          ><button class="btn btn-primary">Add Event</button></a
+        >
+      </aside>
+      <!--Main-->
+      <main class="flex-74 flex justify-start align-start flex-column">
+        <% events.forEach(event=> { %>
+        <article class="flex justify-between align-center">
+          <div style="height: 12.6rem" class="flex-25 font-0 img-container">
+            <img
+              class="full-width"
+              src="/uploads/<%= event.cover  %>"
+              alt="Image Of Event"
+            />
+          </div>
+          <div
+            style="height: 12.6rem"
+            class="flex-74 flex justify-start align-start flex-column"
+          >
+            <h2><%= event.title %></h2>
+            <p>"<%= event.summery.substr(0,100) %>..."</p>
+            <a href="/events/<%= event._id %>">
+              <button class="btn btn-secondary">View Details</button>
+            </a>
+          </div>
+        </article>
+        <% }); %>
+      </main>
+    </div>
+  </body>
+</html>
